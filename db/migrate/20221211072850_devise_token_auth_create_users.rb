@@ -37,6 +37,10 @@ class DeviseTokenAuthCreateUsers < ActiveRecord::Migration[7.0]
       ## Tokens
       t.json :tokens
 
+      t.integer :role, default: 0
+      t.string :twitter_url
+      t.string :web_url
+
       t.timestamps
     end
 
