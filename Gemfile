@@ -18,6 +18,7 @@ gem "bootsnap", require: false
 gem "devise"
 gem "devise_token_auth"
 gem "rack-cors" 
+gem 'view_component', '~> 2.78'
 
 group :development, :test do
   gem "debug", platforms: %i[ mri mingw x64_mingw ]
