@@ -40,8 +40,10 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_18_164314) do
     t.text "bio"
     t.string "country"
     t.string "city"
+    t.string "hash_id"
     t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
     t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["hash_id"], name: "index_users_on_hash_id"
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
     t.index ["uid", "provider"], name: "index_users_on_uid_and_provider", unique: true
   end

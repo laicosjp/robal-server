@@ -162,6 +162,8 @@ GEM
     pre-commit (0.39.0)
       pluginator (~> 1.5)
     public_suffix (5.0.1)
+    public_uid (2.2.0)
+      activerecord (> 4.2)
     puma (5.6.5)
       nio4r (~> 2.0)
     racc (1.6.1)
@@ -299,6 +301,7 @@ DEPENDENCIES
   jsbundling-rails
   pg (~> 1.1)
   pre-commit
+  public_uid
   puma (~> 5.0)
   rack-cors
   rails (~> 7.0.4)
