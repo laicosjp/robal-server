@@ -11,4 +11,6 @@ class User < ActiveRecord::Base
   generate_public_uid column: :hash_id, generator: PublicUid::Generators::HexStringSecureRandom.new(20)
 
   enum role: { ghost: 0, candidate: 1, employer: 2 }
+
+  validates :hash_id, uniqueness: true
 end
