@@ -33,5 +33,17 @@ module Server
 
     # Don't generate system test files.
     config.generators.system_tests = nil
+
+    config.middleware.insert_before 0, Rack::Cors do
+      allow do
+        origins ['http://localhost:3000', 'https://robal-client.vercel.app']
+        resource "*",
+          headers: :any,
+          expose: ['access-token', 'expiry', 'token-type', 'uid', 'client'],
+          methods: [:get, :post, :options, :head, :delete]
+      end
+    end
+
+    config.time_zone = 'Tokyo'
   end
 end
