@@ -14,7 +14,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_18_164314) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "users", force: :cascade do |t|
+  create_table "users", primary_key: "hash_id", id: :string, force: :cascade do |t|
     t.string "provider", default: "email", null: false
     t.string "uid", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -40,7 +40,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_18_164314) do
     t.text "bio"
     t.string "country"
     t.string "city"
-    t.string "hash_id"
     t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["hash_id"], name: "index_users_on_hash_id"
