@@ -3,7 +3,7 @@ class ApplicationController < ActionController::Base
 
   include DeviseTokenAuth::Concerns::SetUserByToken
 
-  # def current_user
-  #   @current_user ||= current_api_v1_user
-  # end
+  def current_user
+    @current_user ||= current_api_v1_user
+  end
 end
