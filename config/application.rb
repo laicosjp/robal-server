@@ -40,7 +40,7 @@ module Server
         resource "*",
           headers: :any,
           expose: ['access-token', 'expiry', 'token-type', 'uid', 'client'],
-          methods: [:get, :post, :options, :head, :delete]
+          methods: [:get, :post, :put, :options, :head, :delete]
       end
     end
 
