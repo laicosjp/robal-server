@@ -1,8 +1,8 @@
 class Api::V1::UsersController < ApplicationController
+  before_action :set_user, only: [:show]
   before_action :authenticate_api_v1_user!, only: [:update]
 
   def show
-    @user = User.find(params[:hash_id])
     render json: @user, status: :ok
   end
 
@@ -18,5 +18,10 @@ class Api::V1::UsersController < ApplicationController
 
     def user_params
       params.require(:user).permit(:name, :nickname, :email, :web_url, :twitter_url, :position, :bio, :country, :city)
+    end
+
+    def set_user
+      @user = User.find_by(hash_id: params[:hash_id])
+      response_not_found(:user) if @user.blank?
     end
 end
