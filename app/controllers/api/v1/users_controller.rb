@@ -17,7 +17,17 @@ class Api::V1::UsersController < ApplicationController
   private
 
     def user_params
-      params.require(:user).permit(:name, :nickname, :email, :web_url, :twitter_url, :position, :bio, :country, :city)
+      params.require(:user).permit(
+        :name, 
+        :nickname, 
+        :email, 
+        :web_url, 
+        :twitter_url, 
+        :position, 
+        :bio, 
+        :country, 
+        :city
+      )
     end
 
     def set_user
