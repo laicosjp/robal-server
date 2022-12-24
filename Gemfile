@@ -12,6 +12,8 @@ gem 'devise_token_auth'
 gem 'jbuilder'
 gem 'jsbundling-rails'
 gem 'pg', '~> 1.1'
+gem 'pry-rails'
+gem 'public_uid'
 gem 'puma', '~> 5.0'
 gem 'rack-cors'
 gem 'rails', '~> 7.0.4'
@@ -32,6 +34,7 @@ group :development do
   gem 'rubocop-performance', require: false
   gem 'rubocop-rails', require: false
   gem 'rubocop-rspec'
+  gem 'rubocop-rubycw'
   gem 'web-console'
 end
 

@@ -1,8 +1,9 @@
 class DeviseTokenAuthCreateUsers < ActiveRecord::Migration[7.0]
   def change
     
-    create_table(:users) do |t|
+    create_table :users, id: false do |t|
       ## Required
+      t.string :hash_id, null: false, primary_key: true
       t.string :provider, :null => false, :default => "email"
       t.string :uid, :null => false, :default => ""
 

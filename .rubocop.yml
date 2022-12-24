@@ -1,38 +1,35 @@
+# 参考: https://hoshinotsuyoshi.com/post/rubocop_yaml/
+
 inherit_from: .rubocop_todo.yml
 
-# private/protected は一段深くインデントする
-Layout/IndentationConsistency:
-  EnforcedStyle: indented_internal_methods
+inherit_mode:
+  merge:
+    - Exclude
 
-# 自動生成されるものはチェック対象から除外する
+require:
+  - rubocop-performance
+  - rubocop-rubycw
+
 AllCops:
+  DisabledByDefault: true
   Exclude:
-    - "vendor/**/*" # rubocop config/default.yml
-    - "bin/**/*"
-    - "db/**/*"
-    - "spec/**/*"
-    - "test/**/*"
-    - "config/**/*"
-  DisplayCopNames: true
+    - 'gems/**/*'
   NewCops: enable
-  SuggestExtensions: false
 
-Style/Documentation:
-  Enabled: false
+Bundler:
+  Enabled: true
 
-ClassAndModuleChildren:
-  EnforcedStyle: compact
+Gemspec:
+  Enabled: true
 
-Style/FrozenStringLiteralComment:
-  Enabled: false
+Lint:
+  Enabled: true
 
-Style/GlobalStdStream:
-  Exclude:
-    - "config/environments/production.rb"
+Performance:
+  Enabled: true
 
-Style/RedundantFetchBlock:
-  Exclude:
-    - "config/puma.rb"
+Rubycw:
+  Enabled: true
 
-Layout/LineLength:
-  Max: 198
+Security:
+  Enabled: true
